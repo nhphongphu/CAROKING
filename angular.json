@@ -123,5 +123,8 @@
       }
     }
   },
-  "defaultProject": "xo-game"
+  "defaultProject": "xo-game",
+  "cli": {
+    "analytics": "d637c851-8f63-472d-a09c-40440b253030"
+  }
 }

@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { Cell } from '../cell/cell.interface';
+import { Cell } from './cell.interface';
 import { Player } from '../../Player';
 @Component({
   selector: 'app-cell',
@@ -16,14 +16,14 @@ export class CellComponent implements OnInit, Cell {
   @Input('column') column: number;
   @Input('state') state: number = 0;
 
-  
+
   constructor() { }
 
 
   ngOnInit(): void {
   }
 
-  changeState(state: number){
+  changeState(state: number) {
     this.state = state;
   }
 }

@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { OpponentType, MapSize } from '../GameMode';
-import { GameConfig } from '../game-config';
-import {Router } from '@angular/router';
-import SoundManager from '../SoundManager';
+import { OpponentType, MapSize } from '../../GameMode';
+import { GameConfig } from '../../game-config';
+import { Router } from '@angular/router';
+import SoundManager from '../../SoundManager';
 
 
 @Component({
@@ -13,44 +13,44 @@ import SoundManager from '../SoundManager';
 export class MainComponent implements OnInit {
   // Declare sound object
 
-  public SoundManager : SoundManager = new SoundManager();
+  public SoundManager: SoundManager = new SoundManager();
 
   // Data for html
   AllMode = OpponentType;
   AllMap = MapSize;
 
   // Data
-  mode : OpponentType = OpponentType.Player;
-  size : MapSize = MapSize.Small;
+  mode: OpponentType = OpponentType.Player;
+  size: MapSize = MapSize.Small;
   gameConfig: GameConfig = {
-    Map: this.size,  
+    Map: this.size,
     Opponent: this.mode
   }
-  
 
-  
-  
-  constructor(private router: Router){
- 
+
+
+
+  constructor(private router: Router) {
+
   }
 
   ngOnInit(): void {
-    
+
   }
 
 
-  selectOpponent(type: OpponentType) :void {
+  selectOpponent(type: OpponentType): void {
     this.SoundManager.playButtonSound();
     this.mode = type;
   }
 
-  selectMap(map: MapSize) :void {
+  selectMap(map: MapSize): void {
 
     this.SoundManager.playButtonSound();
     this.size = map;
   }
 
-  playGame(){
+  playGame() {
     //Play Sound First
     this.SoundManager.playStartSound();
 
@@ -62,10 +62,10 @@ export class MainComponent implements OnInit {
     this.router.navigate(
       ['game', this.gameConfig.Opponent, this.gameConfig.Map]
     )
-    
+
   }
 
-  toAboutPage(){
+  toAboutPage() {
     this.router.navigateByUrl('/about');
   }
 }

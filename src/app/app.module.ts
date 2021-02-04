@@ -4,25 +4,23 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
-import { TableComponent } from './table/table.component';
+import { TableComponent } from './Pages/table/table.component';
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 // Angular Material
 
 // Import Header module:
-import { HeaderModule } from './header/header.module'
 
 // Import Main Module
-import { MainModule } from './main/main.module'
+import { MainModule } from './Pages/main/main.module'
 
 // Import Footer module:
-import { FooterModule } from './footer/footer.module';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 // import flex layout module
 import { FlexLayoutModule } from '@angular/flex-layout';
-import { WinnerDialogComponent } from './winner-dialog/winner-dialog.component';
+import { WinnerDialogComponent } from './Pages/winner-dialog/winner-dialog.component';
 
 import { MatDialogModule } from '@angular/material/dialog';
 
@@ -33,14 +31,14 @@ import { MatDialogModule } from '@angular/material/dialog';
     WinnerDialogComponent,
   ],
   imports: [
-    BrowserModule, 
+    BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    HeaderModule, FooterModule, FontAwesomeModule,
+    FontAwesomeModule,
     MainModule,
     FlexLayoutModule,
     MatDialogModule
-    
+
   ],
   providers: [],
   bootstrap: [AppComponent]
