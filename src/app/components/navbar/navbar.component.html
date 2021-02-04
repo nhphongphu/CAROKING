@@ -1,0 +1,16 @@
+<mat-toolbar color="primary">
+    <mat-toolbar-row>
+        <span>Caro King</span>
+        <span class="example-spacer"></span>
+        <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
+            <button mat-button [matMenuTriggerFor]="menu" #menuTrigger> <img
+                    style="height: 3rem;border-radius: 50% 50%;" src="{{user.photoURL}}"></button>
+            <mat-menu #menu="matMenu">
+                <button mat-menu-item (click)="logout()">Logout</button>
+            </mat-menu>
+
+
+
+        </button>
+    </mat-toolbar-row>
+</mat-toolbar>

@@ -17,18 +17,27 @@ import { MainModule } from './Pages/main/main.module'
 
 // Import Footer module:
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
-
+import { MatMenuModule } from '@angular/material/menu'
 // import flex layout module
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { WinnerDialogComponent } from './Pages/winner-dialog/winner-dialog.component';
-
+import { FooterComponent } from '../app/components/footer/footer.component'
 import { MatDialogModule } from '@angular/material/dialog';
-
+import { NavbarComponent } from '../app/components/navbar/navbar.component';
+import { AngularFireModule } from '@angular/fire';
+import { AngularFireAuthModule } from '@angular/fire/auth';
+import { environment } from '../../src/environments/environment';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatIconModule } from '@angular/material/icon';
+import { MatButtonModule } from '@angular/material/button';
 @NgModule({
   declarations: [
     AppComponent,
     TableComponent,
     WinnerDialogComponent,
+    NavbarComponent,
+    FooterComponent
+
   ],
   imports: [
     BrowserModule,
@@ -37,7 +46,14 @@ import { MatDialogModule } from '@angular/material/dialog';
     FontAwesomeModule,
     MainModule,
     FlexLayoutModule,
-    MatDialogModule
+    MatDialogModule,
+    AngularFireModule.initializeApp(environment.firebase),
+    AngularFireAuthModule,
+    MatToolbarModule,
+    MatIconModule,
+    MatButtonModule,
+    MatMenuModule
+
 
   ],
   providers: [],
